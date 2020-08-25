@@ -1,7 +1,15 @@
+package madLibsPackage;
+
+import java.util.ArrayList;
 
 public class MadLibs {
 
+	// Create a string array list for custom words
+	private ArrayList<String> customWords = new ArrayList<String>();
+	
 	public static void main(String[] args) {
+		
+		
 		//0. Give variable names for each of the arraylists below and create Madlibs stories.
 		
 		//1. Read a nouns.txt file and store its list of nouns into an arraylist.
@@ -16,6 +24,19 @@ public class MadLibs {
 		// Read the story from that file and write it to System.out, but replacing each instance of
 		// <<NOUN>>, <<VERB>>, etc. with a randomly chosen word from the corresponding list.
 
+	}
+	public void AddCustomWord(String wordToAdd) {
+		customWords.add(wordToAdd);
+	}
+	
+	// Get a word by an array index
+	public String GetCustomWordByIndex(int indexOfWordToGet) {
+		String customWord = "";
+		
+		if (indexOfWordToGet > 0) {
+			customWord = customWords.get(indexOfWordToGet);
+		}
+		return customWord;
 	}
 
 }
